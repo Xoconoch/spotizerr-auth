@@ -20,7 +20,7 @@ A command-line tool to help you authenticate and register a Spotify account with
 
 1.  **Clone the repository or download the files:**
     ```bash
-    git clone <repository_url>
+    git clone https://github.com/Xoconoch/spotizerr-auth
     cd spotizerr-auth
     ```
 
