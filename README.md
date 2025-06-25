@@ -40,6 +40,18 @@ Run the script from your terminal:
 python spotizerr-auth.py
 ```
 
+## running with docker
+
+Build the Docker image using the provided Dockerfile and the command below:
+```bash
+docker build . -t spotizerr-auth
+```
+
+Then, run the Docker container with the following command:
+```
+docker run --rm -it spotizerr-auth
+```
+
 The script will guide you through the following steps:
 
 1.  **Enter Spotizerr URL**: You'll be prompted for the base URL of your Spotizerr instance. You can press Enter to use the default (`http://localhost:7171`).
