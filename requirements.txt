@@ -1,2 +1,3 @@
-librespot-spotizerr
+librespot-spotizerr==0.2.9
 requests 
+rich
