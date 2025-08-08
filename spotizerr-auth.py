@@ -406,8 +406,8 @@ def main():
             except OSError as e:
                 console.print(f"❌ [bold red]Error deleting 'credentials.json':[/] {e}")
         else:
-            console.print(f"{Icons.INFO} 'credentials.json' was kept for future use.[/]")
-
+            console.print(f"{Icons.INFO} 'credentials.json' was kept for future use.")
+         
         console.print(f"\n[bold green]{Icons.SUCCESS} Process completed successfully![/]")
         console.print(f"[dim]Your Spotify account '{account_name}' is now configured in Spotizerr.[/]\n")
         
@@ -415,7 +415,7 @@ def main():
         console.print(f"\n[yellow]{Icons.WARNING} Operation cancelled by user.[/]")
         sys.exit(0)
     except Exception as e:
-        console.print(f"\n[bold red]An unexpected error occurred:[/] {e}")
+        console.print(f"\n[bold red]An unexpected error occurred:[/bold red] {e}")
         console.print_exception(show_locals=True)
         sys.exit(1)
 
