@@ -12,44 +12,16 @@ A command-line tool to help you authenticate and register a Spotify account with
 
 ## Prerequisites
 
--   Python 3.7+
+-   Docker
 -   A running instance of [Spotizerr](https://github.com/Xoconoch/spotizerr).
 -   Spotify `client_id` and `client_secret`. You can get these by creating an application on the [Spotify Developer Dashboard](https://developer.spotify.com/dashboard).
-
-## Installation
-
-1.  **Clone the repository or download the files:**
-    ```bash
-    git clone https://github.com/Xoconoch/spotizerr-auth
-    cd spotizerr-auth
-    ```
-
-2.  **Install the required Python packages:**
-    It is recommended to use a virtual environment.
-    ```bash
-    python -m venv .venv
-    source .venv/bin/activate
-    pip install -r requirements.txt
-    ```
 
 ## Usage
 
 Run the script from your terminal:
 
 ```bash
-python spotizerr-auth.py
-```
-
-## running with docker
-
-Build the Docker image using the provided Dockerfile and the command below:
-```bash
-docker build . -t spotizerr-auth
-```
-
-Then, run the Docker container with the following command:
-```
-docker run --rm -it spotizerr-auth
+docker run --network=host --rm -it cooldockerizer93/spotizerr-auth
 ```
 
 The script will guide you through the following steps:
