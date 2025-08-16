@@ -38,7 +38,7 @@ And then run
 spotizerr-auth
 ```
 
-You will have to run activate the virtual environment every time you want to use the tool.
+You will have to activate the virtual environment every time you want to use the tool.
 
 The script will guide you through the following steps:
 
