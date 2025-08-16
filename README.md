@@ -24,6 +24,22 @@ Run the script from your terminal:
 docker run --network=host --rm -it cooldockerizer93/spotizerr-auth
 ```
 
+If docker doesn't work (it probably won't unless your on linux) you can still run it in bare metal.
+
+Run the installer:
+
+```
+python3 -m .venv venv && source .venv/bin/activate && pip install spotizerr-auth
+```
+
+And then run
+
+```
+spotizerr-auth
+```
+
+You will have to run activate the virtual environment every time you want to use the tool.
+
 The script will guide you through the following steps:
 
 1.  **Enter Spotizerr URL**: You'll be prompted for the base URL of your Spotizerr instance. You can press Enter to use the default (`http://localhost:7171`).
