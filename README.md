@@ -29,7 +29,7 @@ If docker doesn't work (it probably won't unless your on linux) you can still ru
 Run the installer:
 
 ```
-python3 -m .venv venv && source .venv/bin/activate && pip install spotizerr-auth
+python3 -m venv .venv && source .venv/bin/activate && pip install spotizerr-auth
 ```
 
 And then run
