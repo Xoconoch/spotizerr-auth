@@ -356,10 +356,27 @@ def main():
         cred_file = pathlib.Path("credentials.json")
         if cred_file.exists():
             console.print(f"⚠️ [yellow]'{cred_file}' already exists.[/]")
-            if Confirm.ask("Overwrite it by connecting to Spotify?", default=True):
-                get_spotify_session_and_wait_for_credentials()
+            # Validate existing credentials before offering reuse
+            can_reuse = False
+            try:
+                if cred_file.stat().st_size > 0:
+                    with open(cred_file, "r") as f:
+                        _existing = json.load(f)
+                        can_reuse = isinstance(_existing, dict) and len(_existing) > 0
+            except Exception:
+                can_reuse = False
+            if can_reuse:
+                if Confirm.ask("Reuse existing 'credentials.json' without reconnecting to Spotify?", default=True):
+                    console.print(f"{Icons.INFO} Using existing 'credentials.json'.")
+                else:
+                    get_spotify_session_and_wait_for_credentials()
             else:
-                console.print(f"{Icons.INFO} Using existing 'credentials.json'.")
+                console.print("❌ [bold red]Existing 'credentials.json' is invalid or empty. You must reconnect to Spotify.[/]")
+                if Confirm.ask("Connect now to create a fresh 'credentials.json'?", default=True):
+                    get_spotify_session_and_wait_for_credentials()
+                else:
+                    console.print("❌ [bold red]Cannot continue without a valid 'credentials.json'. Exiting.[/]")
+                    sys.exit(1)
         else:
             get_spotify_session_and_wait_for_credentials()
         
