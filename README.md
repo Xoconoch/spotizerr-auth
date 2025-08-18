@@ -26,11 +26,34 @@ docker run --network=host --rm -it cooldockerizer93/spotizerr-auth
 
 If docker doesn't work (it probably won't unless your on linux) you can still run it in bare metal.
 
-Run the installer:
+### Run the installer
 
-```
+<details>
+<summary>Linux / macOS</summary>
+
+```bash
 python3 -m venv .venv && source .venv/bin/activate && pip install spotizerr-auth
+````
+
+</details>
+
+<details>
+<summary>Windows (PowerShell)</summary>
+
+```powershell
+python -m venv .venv; .venv\Scripts\Activate.ps1; pip install spotizerr-auth
 ```
+
+</details>
+
+<details>
+<summary>Windows (cmd.exe)</summary>
+
+```cmd
+python -m venv .venv && .venv\Scripts\activate && pip install spotizerr-auth
+```
+
+</details>
 
 And then run
 
