@@ -9,14 +9,9 @@ RUN apt-get update && \
     apt-get install -y git && \
     rm -rf /var/lib/apt/lists/*
 
-# Clone the repository
-RUN git clone https://github.com/Xoconoch/spotizerr-auth.git
-
-# Set the working directory
 WORKDIR /spotizerr-auth
 
-# Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install spotizerr-auth==1.1.1
 
 # Set the default command to run the application
-CMD ["python", "spotizerr-auth.py"]
+CMD ["spotizerr-auth"]
