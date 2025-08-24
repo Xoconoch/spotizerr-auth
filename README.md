@@ -34,6 +34,10 @@ If docker doesn't work (it probably won't unless your on linux) you can still ru
 ```bash
 python3 -m venv .venv && source .venv/bin/activate && pip install spotizerr-auth
 ````
+or with [uv](https://docs.astral.sh/uv/) installed:
+```bash
+uvx spotizerr-auth
+````
 
 </details>
 
@@ -43,6 +47,10 @@ python3 -m venv .venv && source .venv/bin/activate && pip install spotizerr-auth
 ```powershell
 python -m venv .venv; .venv\Scripts\Activate.ps1; pip install spotizerr-auth
 ```
+or with [uv](https://docs.astral.sh/uv/) installed:
+```bash
+uvx spotizerr-auth
+````
 
 </details>
 
@@ -77,7 +85,9 @@ The script will guide you through the following steps:
 
 4.  **Authenticate via Spotify Connect**:
     -   The utility will start a Spotify Connect device on your network (e.g., `librespot-spotizerr`).
-    -   Open Spotify on any device (phone, desktop), start playing a track, and use the "Connect to a device" feature to **transfer playback to the new device**.
+    -   Open Spotify on any device (phone, desktop) different than the one you're running this script, so typically not Spotify on your desktop. Then start playing a track, and use the "Connect to a device" feature to **transfer playback to the new device** called librespot-spotizerr. Typical setup: your latop and mobile phone are connected to the **same WiFi network**, you run the script on your laptop and use the phone Spotify App to transfer the device. Note: you can not use the Spotify web application for the transfer. This is a screenshot from Spotify on a smartphone showing the needed device to transfer to:
+    - <img width="300" height="" alt="image" src="spotify-phone-transfer.jpeg" />
+
     -   Once you transfer playback, the script captures the session, creates a `credentials.json` file, and shuts down the Connect server.
 
 5.  **Register with Spotizerr**: The script automatically sends the captured credentials to your Spotizerr instance, creating or updating the account.
